@@ -15,4 +15,6 @@ class Application():
         self.root.geometry("1000x620")
         self.root.wm_resizable(True,True)
 
+
+
 Application()
