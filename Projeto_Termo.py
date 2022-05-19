@@ -26,7 +26,7 @@ class Application():
         self.frame_2=Frame(self.root, bd=4, bg="#F4A460", highlightthickness=3 ) 
         self.frame_2.place(relx=0.02,rely=0.5,relwidth=0.96,relheight=0.46)
 
-
+Arthur Felippe
 
 
 Application()
