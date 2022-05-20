@@ -35,19 +35,40 @@ class Application():
         self.bt_buscar.place(relx=0.3,rely=0.1,relwidth=0.1,relheight=0.15)
         ###botão novo
         self.bt_novo=Button(self.frame_1,text="Novo")
-        self.bt_novo.place(relx=0.6,rely=0.1,relwidth=0.1,relheight=0.15)
+        self.bt_novo.place(relx=0.4,rely=0.1,relwidth=0.1,relheight=0.15)
         ###botão alterar
         self.bt_alterar=Button(self.frame_1,text="Alterar")
-        self.bt_alterar.place(relx=0.7,rely=0.1,relwidth=0.1,relheight=0.15)
+        self.bt_alterar.place(relx=0.5,rely=0.1,relwidth=0.1,relheight=0.15)
         ###botão apagar
         self.bt_apagar=Button(self.frame_1,text="Apagar")
-        self.bt_apagar.place(relx=0.8,rely=0.1,relwidth=0.1,relheight=0.15)
-        ###Criação da label de entrada do codigo
-        self.lb_codigo=Label(self.frame_1,text="Serial")
-        self.lb_codigo.place(relx=0.05,rely=0.05)
-
+        self.bt_apagar.place(relx=0.6,rely=0.1,relwidth=0.1,relheight=0.15)        
+        
+        ###Criação da label e entrada do nome 
+        self.lb_nome=Label(self.frame_1, text="Nome Colaborador")
+        self.lb_nome.place(relx=0.05, rely=0.30)
+        self.nome_entry=Entry(self.frame_1)
+        self.nome_entry.place(relx=0.05,rely=0.37,relwidth=0.8)
+        ###Criação da label e entrada do CPF 
+        self.lb_cpf=Label(self.frame_1, text="CPF")
+        self.lb_cpf.place(relx=0.05, rely=0.48)
+        self.cpf_entry=Entry(self.frame_1)
+        self.cpf_entry.place(relx=0.05,rely=0.55,relwidth=0.2)
+        ###Criação da label e entrada do Modelo Equipamento
+        self.lb_equipamento=Label(self.frame_1, text="Modelo Equipamento")
+        self.lb_equipamento.place(relx=0.05, rely=0.65)
+        self.equipamento_entry=Entry(self.frame_1)
+        self.equipamento_entry.place(relx=0.05,rely=0.71,relwidth=0.8)
+        ###Criação da label de entrada do Serial
+        self.lb_serial=Label(self.frame_1,text="Nº Serial")
+        self.lb_serial.place(relx=0.05,rely=0.82)
         self.codigo_entry = Entry(self.frame_1)
-        self.codigo_entry.place(relx=0.05, rely=0.15)
+        self.codigo_entry.place(relx=0.05, rely=0.89,relwidth=0.1)           
+        ###Criação da label e entrada do Nº Etiqueta 
+        self.lb_etiqueta=Label(self.frame_1, text="Nº Patrimônio")
+        self.lb_etiqueta.place(relx=0.2, rely=0.82)
+        self.etiqueta_entry=Entry(self.frame_1)
+        self.etiqueta_entry.place(relx=0.2,rely=0.89,relwidth=0.1)
+        
 
 
 Application()
