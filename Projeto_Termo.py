@@ -2,6 +2,7 @@ from cProfile import label
 from tkinter import *
 from tkinter import ttk
 from tkinter.tix import COLUMN
+import sqlite3
 
 root=Tk()
 
@@ -12,7 +13,25 @@ class Funcs():
          self.equipamento_entry.delete(0,END)
          self.serial_entry.delete(0,END)
          self.etiqueta_entry.delete(0,END)
-
+    def conecta_bd(self):
+        self.conn = sqlite3.connect("funcionarios.bd")
+        self.cursor = self.conn.cursor()
+    def desconecta_bd(self):
+        self.conn.close()
+    def montarTabelas(self):
+        self.conecta_bd(); print("Conectando ao banco de dados")
+        ###Criação da tabela 
+        self.cursor.execute(""" 
+            CREATE TABLE IF NOT EXISTS funcionario (
+               nome_Completo CHAR(40) NOT NULL,
+               CPF CHAR(14) NOT NULL,
+               Modelo_equipamento CHAR(40) NOT NULL,
+               Serial CHAR(15) NOT NULL,
+               Patrimonio CHAR(10) NOT NULL,
+            );
+        """)         
+        self.conn.commit();print("Banco de dados criado")
+        self.desconecta_bd()
 
 root.configure(background="#F4A460")
 
@@ -23,6 +42,7 @@ class Application(Funcs):
         self.frames_da_tela()
         self.widgets_frame1()
         self.lista_frame2()
+        self.montarTabelas()
         root.mainloop()
     def tela(self):
         self.root.title("Preenchimento de termo de Ativos")
