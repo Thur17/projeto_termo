@@ -55,6 +55,7 @@ class Funcs():
         self.listaCli.delete(* self.listaCli.get_children())
         self.conecta_bd()
         lista = self.cursor.execute(""" SELECT Nome, CPF, Equipamento, Serial, Patrimônio FROM funcionario ORDER BY Nome ASC;   """)
+
         for i in lista:
             self.listaCli.insert("", END, values=i)
             self.desconecta_bd()
